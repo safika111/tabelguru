@@ -1,0 +1,269 @@
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe4ec, #f8d8ff, #e0e7ff);
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1250px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== JUDUL ===== */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #d63384;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #d63384;
+    margin: 30px 0 20px;
+}
+
+/* ===== FORM ===== */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group:nth-last-child(-n+2) {
+    grid-column: span 2;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* ===== INPUT ===== */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    background: #fafafa;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #d63384;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(214, 51, 132, 0.1);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ===== RADIO ===== */
+.form-group label:has(input[type="radio"]) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+input[type="radio"] {
+    width: auto;
+    accent-color: #d63384;
+}
+
+/* ===== BUTTON ===== */
+button {
+    grid-column: span 2;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #d63384, #a855f7);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===== GARIS ===== */
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d63384, transparent);
+    margin: 40px 0;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    background: white;
+}
+
+th {
+    background: linear-gradient(135deg, #d63384, #a855f7);
+    color: white;
+    padding: 15px 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 14px;
+}
+
+tbody tr {
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: #fff0f7;
+    transform: scale(1.005);
+}
+
+/* ===== AKSI ===== */
+td a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 8px;
+    margin: 2px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+td a:first-child {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+td a:last-child {
+    background: #ffe4e6;
+    color: #e11d48;
+}
+
+td a:hover {
+    transform: translateY(-1px);
+    opacity: 0.8;
+}
+
+/* ===== ALERT ===== */
+.alert {
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #15803d;
+    border: 1px solid #86efac;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fca5a5;
+}
+
+/* ===== ANIMASI ===== */
+.container {
+    animation: muncul 0.7s ease;
+}
+
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group:nth-last-child(-n+2) {
+        grid-column: span 1;
+    }
+
+    button {
+        grid-column: span 1;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .container {
+        border-radius: 16px;
+    }
+}
+
